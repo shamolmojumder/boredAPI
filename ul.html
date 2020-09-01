@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UL</title>
+    <style>
+        .container {
+            background: #efefef;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+
+        }
+
+        .input {}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="input">
+        <button id="btn">Submit</button>
+    </div>
+    <ul id="ul">
+        <li>here</li>
+    </ul>
+
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+
+            const inputValue = document.getElementById("input").value
+            console.log(inputValue);
+
+
+
+        })
+    </script>
+</body>
+
+</html>

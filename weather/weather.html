@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        .input {
+
+            text-align: center;
+        }
+
+        input[type="text"] {
+            height: 50px;
+            width: 200px;
+            text-align: center;
+            color: purple;
+            font-weight: bold;
+        }
+
+        .display {
+            border: 2px solid salmon;
+            margin-top: 25px;
+            background: gray;
+            opacity: .3;
+            padding: 200px 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input">
+        <input type="text" class="inputValue" placeholder="Enter the city name">
+        <input class="button" type="submit" value="Submit">
+    </div>
+    <div class="display">
+        <h1 class="name"></h1>
+        <p class="desc"></p>
+        <p class="temp"></p>
+    </div>
+
+    <script>
+        const button = document.querySelector(".button");
+        const inputValue = document.querySelector("inputValue");
+        const display = document.querySelector("display");
+        const name = document.querySelector("name");
+        const desc = document.querySelector("desc");
+        const temp = document.querySelector("temp")
+
+
+        button.addEventListener("click", function () {
+
+            fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValue.value + '&appid=ecd2d085fe185c58c2db07cca403381e')//https://home.openweathermap.org/api_keys
+
+                .then(res => res.json())
+                .then(data => console.log(data))
+
+                .catch(err => alert("wrong city"))
+        })
+    </script>
+</body>
+
+</html>
