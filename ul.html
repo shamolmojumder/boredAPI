@@ -30,11 +30,24 @@
         document.getElementById("btn").addEventListener("click", function () {
 
             const inputValue = document.getElementById("input").value
-
+            const ul = document.getElementById("ul")
+            // document.createElement("li")
             // document.getElementById(ul)
-            const li = document.getElementById("li").innerHTML = inputValue;
-
+            // const li = document.getElementById("li").innerHTML = inputValue;
+            const li = document.createElement("li")
+            li.innerHTML = inputValue
+            ul.appendChild(li)
+            document.getElementById("input").value = ""
         })
+
+
+        // document.getElementById("btn").addEventListener("click", function () {
+        //     const inputValue = document.getElementById("input").value;
+        //     const ul = document.getElementById("ul");
+        //     const li = document.createElement("li");
+        //     const liAdded = li.innerHTML = inputValue;
+        // })
+
     </script>
 </body>
 
